@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research | Zhuqing Liu</title>
+<meta name="description" content="Research overview of Zhuqing Liu: AI security, large language models, stochastic optimization, and communication-efficient distributed learning.">
+<meta property="og:title" content="Research | Zhuqing Liu">
+<meta property="og:description" content="Research overview of Zhuqing Liu: AI security, large language models, stochastic optimization, and communication-efficient distributed learning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a id="top"></a>
+
+<div id="banner">
+  <div class="inner">
+    <div>
+      <h1><a href="index.html">Zhuqing (Zuki) Liu</a></h1>
+      <p class="tagline">Assistant Professor of Computer Science and Engineering, University of North Texas</p>
+      <p class="where">Discovery Park, 3940 N. Elm St., Denton, TX 76207 &nbsp;&middot;&nbsp; Zhuqing.Liu@unt.edu</p>
+    </div>
+    <div class="crest"><strong>UNT</strong>College of Engineering</div>
+  </div>
+</div>
+
+<div id="nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="research.html" class="active">Research</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="grants.html">Grants</a></li>
+    <li><a href="teaching.html">Teaching</a></li>
+    <li><a href="activities.html">Activities</a></li>
+  </ul>
+</div>
+
+<div id="page">
+  <h2>Research Overview</h2>
+  <p class="lead">
+    My research sits between optimization theory and the security of deployed machine learning
+    systems. On one side, I design first-order stochastic algorithms with provable convergence rates
+    and sample complexities for decentralized, bilevel, and multi-objective learning. On the other, I
+    study the poisoning, backdoor, and Byzantine attacks that determine whether those systems survive
+    real-world deployment, and the defenses that hold up against them.
+  </p>
+
+  <h2>1. AI Security and Large Language Models</h2>
+  <p>
+    Modern LLM pipelines are assembled from components that no single party fully controls: retrieved
+    documents, third-party fine-tunes, code-completion models, and cooperating agents. Each of these
+    is an attack surface. My group works on three questions.
+  </p>
+  <ul class="plain">
+    <li><b>Attribution.</b> When a retrieval-augmented generation system produces a poisoned answer,
+        which document caused it? We develop traceback and responsibility-attribution methods that
+        identify the responsible knowledge source rather than merely flagging that something went
+        wrong. <i>(IEEE S&amp;P 2026, WWW 2025)</i></li>
+    <li><b>Repair.</b> Once a model is known to be backdoored, retraining is often infeasible. We
+        study post-hoc patching that removes the backdoor behavior while preserving utility.
+        <i>(USENIX Security 2026)</i></li>
+    <li><b>Failure localization in agent systems.</b> In a multi-agent pipeline, a single
+        compromised or miscalibrated agent can corrupt the final output. We localize which agent
+        broke the system, and why. <i>(COLM 2026)</i></li>
+  </ul>
+  <p>
+    We also maintain benchmarks for poisoning attacks against RAG, so that defenses are evaluated
+    against a common and realistic threat model rather than bespoke attacks.
+  </p>
+
+  <h2>2. First-Order Stochastic Optimization for Machine Learning</h2>
+  <p>
+    Many learning problems are not simple empirical risk minimization. Hyperparameter optimization,
+    meta-learning, and data reweighting are <b>bilevel</b>; adversarial training and robust learning
+    are <b>min-max</b>; recommendation and multi-task systems are <b>multi-objective</b>. These
+    structured problems are far harder to analyze than single-level stochastic optimization,
+    especially in the decentralized setting where no node sees the full objective.
+  </p>
+  <ul class="plain">
+    <li><b>Decentralized bilevel learning.</b> INTERACT, Prometheus, DIAMOND, and DUET progressively
+        reduce sample and communication complexity, with DUET removing the lower-level strong
+        convexity assumption that earlier analyses relied on.</li>
+    <li><b>Min-max learning.</b> PRECISION handles decentralized constrained min-max problems; SAGDA
+        achieves O(&epsilon;<sup>&minus;2</sup>) communication complexity in the federated setting.</li>
+    <li><b>Multi-objective learning.</b> STIMULUS and Federated Multi-Objective Learning provide
+        convergence guarantees for stochastic multi-gradient methods under realistic sampling.</li>
+    <li><b>Reinforcement learning.</b> PILOT gives an O(1/T)-convergent policy evaluation method with
+        nonlinear function approximation <i>(ICLR 2024 spotlight)</i>.</li>
+  </ul>
+
+  <h2>3. Communication Efficiency in Distributed and Federated Learning</h2>
+  <p>
+    Distributed training is usually bottlenecked by communication, not computation, and the
+    standard fixes for communication cost tend to weaken robustness and privacy at the same time. We
+    study designs that improve all three together: variance-reduced and semi-asynchronous methods
+    that cut communication rounds, Byzantine-robust aggregation for ring-all-reduce and decentralized
+    topologies, differentially private decentralized optimization, and defenses for split and
+    asynchronous federated learning.
+  </p>
+
+  <hr class="sep">
+  <p class="foot-note">
+    A complete list of papers is available on the <a href="publications.html">Publications</a> page;
+    supporting grants are listed under <a href="grants.html">Grants</a>.
+  </p>
+
+  <a class="totop" href="#top">Back to Top &uarr;</a>
+</div>
+
+<div id="footer">
+  <div class="inner">
+    <span>Copyright &copy; 2026 <a href="mailto:Zhuqing.Liu@unt.edu">Zhuqing Liu</a>. All rights reserved.</span>
+    <span>Last updated: August 2026</span>
+  </div>
+</div>
+
+</body>
+</html>
